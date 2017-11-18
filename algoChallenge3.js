@@ -1,9 +1,8 @@
-
 //Given an array, write a function that changes all positive numbers in the array to“ big”.
 //Example: makeItBig([-1,3,5,-5]) returns that same array, changed to [-1, "big", "big",-5].
 function makeItBig(arr) {
-    for (var i=0 ; i <=a rr.length; i++) {
-        if (arr[i]> 0) {
+    for (var i = 0; i <= a rr.length; i++) {
+        if (arr[i] > 0) {
             arr[i] = "Big";
         }
     }
@@ -32,9 +31,9 @@ console.log(printLowReturnHigh([6, 13, 22, 4, 9, 64, 13, -12]));
 //Build a function that takes array of numbers. The function should print
 //second-to-last value in the array, and return first odd value in the array.
 function printOneReturnAnother(arr) {
-    var firstOdd=[ ];
-    for (var i=0 ; i <=a rr.length; i++) {
-        if (i==a rr.length - 2) {
+    var firstOdd = [];
+    for (var i = 0; i <= a rr.length; i++) {
+        if (i == a rr.length - 2) {
             console.log(arr[i]);
         }
         if (arr[i] % 2 == 1) {
@@ -47,3 +46,51 @@ function printOneReturnAnother(arr) {
     return firstOdd[0];
 }
 console.log(printOneReturnAnother([6, 2, 8, 7, 3, 14, 1, 23]));
+
+//Given array, create a function to return a new array where each value in the
+//original has been doubled. Calling double([1,2,3]) should return [2,4,6]
+//without changing original.
+function doubleVision(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i] * 2);
+    }
+    console.log(arr);
+    return newArr;
+}
+console.log(doubleVision([2, 4, 6, 8, 10]));
+
+//Given array of numbers, create function to replace last value with number of positive values.
+//Example: countPositives([-1,1,1,1]) changes array to [-1,1,1,3] and returns it.
+function countPositives(arr) {
+    let positiveSum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            positiveSum += arr[i];
+        }
+    }
+    arr.pop();
+    arr.push(positiveSum);
+    return arr;
+}
+console.log(countPositives([1, 2, 3, 4, 5]))
+
+// Create a function that accepts an array. Every time that array has three
+// odd values in a row, print "That’s odd!" Every time the array has three
+// evens in a row, print "Even more so!"
+const oddsAndEvens = (arr) => {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] && arr[i + 1] && arr[i + 2]) {
+            if (arr[i] % 2 == 0 && arr[i + 1] % 2 == 0 && arr[i + 2] % 2 == 0) {
+                console.log("even");
+            }
+            if (arr[i] % 2 != 0 && arr[i + 1] % 2 != 0 && arr[i + 2] % 2 != 0) {
+                console.log("odd");
+            }
+        }
+    }
+}
+oddsAndEvens([1, 3]); /* nothing. no 3 defined values in a row */
+oddsAndEvens([1, 3, 7]); /* odd */
+oddsAndEvens([2, 2, 8]); /* even */
+oddsAndEvens([1, 3, 1, 2, 4, 6]); /* odd, even */
