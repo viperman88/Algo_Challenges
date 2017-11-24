@@ -94,3 +94,47 @@ oddsAndEvens([1, 3]); /* nothing. no 3 defined values in a row */
 oddsAndEvens([1, 3, 7]); /* odd */
 oddsAndEvens([2, 2, 8]); /* even */
 oddsAndEvens([1, 3, 1, 2, 4, 6]); /* odd, even */
+
+// Given an array of numbers arr, add 1 to every second element,
+//   specifically those whose index is odd (arr[1], [3], [5], etc).
+//   Afterward, console.log each array value and return arr.
+const incrementSeconds = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr.length < 2) {
+            console.log('Not enough values to get to inx[1]');
+        }
+        if (typeof arr[i] !== 'number') {
+            continue;
+        } else if (i % 2 == 1) {
+            arr[i]++;
+        }
+    }
+    console.log(arr);
+    return arr;
+}
+incrementSeconds([1, 2, 3, 4, 5, 6, 7, 8, 9])
+incrementSeconds([1])
+incrementSeconds([1, 2, 3, 4, 5, 6, 7, 'hello', 9])
+
+// You are passed an array containing strings. Working within
+// // that same array, replace each string with a number – the
+// // length of the string at previous array index – and return the array.
+
+// const previousLengths = (arr) => {
+//   let prevLen;
+//   let newVal;
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i] == arr[0]){
+//       prevLen = arr[i].length;
+//       arr[i] = prevLen;
+//     }
+//     else{
+//     newVal = prevLen;
+//     prevLen = arr[i].length;
+//     arr[i] = newVal;
+//     }
+//   }
+//   console.log(arr);
+//   return arr;
+// }
+// previousLengths(['Hello', 'Wow', 'Photosynthesis','Today!'])
