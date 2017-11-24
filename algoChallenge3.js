@@ -177,3 +177,21 @@ const negativeOutlook = (arr) => {
     return newArr;
 }
 console.log(negativeOutlook([2, 4, 6, 8, 10, 12, 14]))
+
+//Create a function that accepts an array, and prints "yummy"
+//each time one of the values is equal to "food". If no array
+//elements are "food", then print "I'm hungry" once.
+const alwaysHungry = (arr) => {
+    let isFood = false;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 'food') {
+            isFood = true;
+            console.log('Yummy');
+        }
+    }
+    if (isFood === false) {
+        console.log('Im hungry');
+    }
+};
+alwaysHungry([23, 'food', 'hello', false, 'food'])
+alwaysHungry([23, 'foo', 'hello', true])
