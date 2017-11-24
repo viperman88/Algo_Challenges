@@ -164,3 +164,16 @@ const reverseArray = (arr) => {
     return arr;
 };
 console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+//Given an array, create and return a new one containing all the
+//values of the provided array, made negative (not simply multiplied by -1).
+//Given [1,-3,5], return [-1,-3,-5].
+const negativeOutlook = (arr) => {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i] * -1);
+    }
+    console.log(arr);
+    return newArr;
+}
+console.log(negativeOutlook([2, 4, 6, 8, 10, 12, 14]))
