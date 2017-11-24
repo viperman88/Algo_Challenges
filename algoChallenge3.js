@@ -138,3 +138,20 @@ incrementSeconds([1, 2, 3, 4, 5, 6, 7, 'hello', 9])
 //   return arr;
 // }
 // previousLengths(['Hello', 'Wow', 'Photosynthesis','Today!'])
+
+//Build function that accepts array. Return a new array with
+//all values except first, adding 7 to each. Do not alter the
+//original array.
+const addSevenToMost = (arr) => {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[0]) {
+            continue;
+        } else {
+            newArr.push(arr[i] + 7);
+        }
+    }
+    console.log(arr);
+    return newArr;
+};
+console.log(addSevenToMost([1, 4, 2, 8, 5, 13, 4, 45]));
