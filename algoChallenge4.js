@@ -93,3 +93,58 @@ letterGrade(63);
 letterGrade(72);
 letterGrade(87);
 letterGrade(98);
+
+//Mr. Cerise teaches high school math. Write a function
+//that assigns and prints a letter grade, given an integer
+//representing a score from 0 to 100? Those getting 90+
+//get an ‘A’, 80-89 earn ‘B’, 70-79 is a ‘C’, 60-69 should
+//get a ‘D’, and lower than 60 receive ‘F’.
+//Example: given 88, you should log "Score:88. Grade: B".
+//Given the score 61, log the string "Score: 61. Grade: D".
+
+//For an additional challenge, add ‘-’ signs to scores in
+//the bottom two percent of A, B, C and D scores, and “ +”
+//signs to the top two percent of B, C and D scores
+//(sorry, Mr. Cerise never gives an A+).
+
+//Example: Given 88, console.log "Score: 88. Grade: B+".
+//Given 61, log "Score: 61. Grade: D-".
+const letterGrade = (grade) => {
+    if (grade < 60) {
+        console.log(`Score: ${grade}, Grade: F`);
+    } else if (grade >= 60 && grade <= 62) {
+        console.log(`Score: ${grade}, Grade: D-`);
+    } else if (grade >= 68 && grade < 70) {
+        console.log(`Score: ${grade}, Grade: D+`);
+    } else if (grade > 62 && grade < 68) {
+        console.log(`Score: ${grade}, Grade: D`);
+    } else if (grade >= 70 && grade <= 72) {
+        console.log(`Score: ${grade}, Grade: C-`);
+    } else if (grade >= 78 && grade < 80) {
+        console.log(`Score: ${grade}, Grade: C+`);
+    } else if (grade > 72 && grade < 78) {
+        console.log(`Score: ${grade}, Grade: C`);
+    } else if (grade >= 80 && grade <= 82) {
+        console.log(`Score: ${grade}, Grade: B-`);
+    } else if (grade >= 88 && grade < 90) {
+        console.log(`Score: ${grade}, Grade: B+`);
+    } else if (grade > 82 && grade < 88) {
+        console.log(`Score: ${grade}, Grade: B`);
+    } else if (grade >= 90 && grade <= 92) {
+        console.log(`Score: ${grade}, Grade: A-`);
+    } else if (grade > 92) {
+        console.log(`Score: ${grade}, Grade: A`);
+    }
+};
+letterGrade(58);
+letterGrade(69);
+letterGrade(65);
+letterGrade(61);
+letterGrade(79);
+letterGrade(75);
+letterGrade(71);
+letterGrade(89);
+letterGrade(85);
+letterGrade(81);
+letterGrade(99);
+letterGrade(92);
