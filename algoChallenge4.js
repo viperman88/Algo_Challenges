@@ -110,30 +110,63 @@ letterGrade(98);
 //Example: Given 88, console.log "Score: 88. Grade: B+".
 //Given 61, log "Score: 61. Grade: D-".
 const letterGrade = (grade) => {
+    console.log(`Score: ${grade}, Grade: ${gradingTable(grade)}`);
+};
+
+const gradingTable = (grade) => {
     if (grade < 60) {
-        console.log(`Score: ${grade}, Grade: F`);
+        return 'F';
     } else if (grade >= 60 && grade <= 62) {
-        console.log(`Score: ${grade}, Grade: D-`);
+        return 'D-';
     } else if (grade >= 68 && grade < 70) {
-        console.log(`Score: ${grade}, Grade: D+`);
+        return 'D+';
     } else if (grade > 62 && grade < 68) {
-        console.log(`Score: ${grade}, Grade: D`);
+        return 'D';
     } else if (grade >= 70 && grade <= 72) {
-        console.log(`Score: ${grade}, Grade: C-`);
+        return 'C-';
     } else if (grade >= 78 && grade < 80) {
-        console.log(`Score: ${grade}, Grade: C+`);
+        return 'C+';
     } else if (grade > 72 && grade < 78) {
-        console.log(`Score: ${grade}, Grade: C`);
+        return 'C';
     } else if (grade >= 80 && grade <= 82) {
-        console.log(`Score: ${grade}, Grade: B-`);
+        return 'B-';
     } else if (grade >= 88 && grade < 90) {
-        console.log(`Score: ${grade}, Grade: B+`);
+        return 'B+';
     } else if (grade > 82 && grade < 88) {
-        console.log(`Score: ${grade}, Grade: B`);
+        return 'B';
     } else if (grade >= 90 && grade <= 92) {
-        console.log(`Score: ${grade}, Grade: A-`);
+        return 'A-';
     } else if (grade > 92) {
-        console.log(`Score: ${grade}, Grade: A`);
+        return 'A';
+    }
+};
+//Alternate way using switch statement
+const gradingTable = (grade) => {
+    switch (true) {
+        case (grade < 60):
+            return "F";
+        case (grade >= 60 && grade <= 62):
+            return "D-";
+        case (grade >= 68 && grade <= 70):
+            return "D+";
+        case (grade >= 62 && grade < 68):
+            return "D";
+        case (grade >= 70 && grade <= 72):
+            return "C-";
+        case (grade >= 78 && grade < 80):
+            return "C+";
+        case (grade >= 72 && grade < 78):
+            return "C";
+        case (grade >= 80 && grade <= 82):
+            return "B-";
+        case (grade >= 88 && grade < 90):
+            return "B+";
+        case (grade >= 82 && grade < 88):
+            return "B";
+        case (grade >= 90 && grade <= 92):
+            return "A-";
+        case (grade > 92):
+            return "A";
     }
 };
 letterGrade(58);
