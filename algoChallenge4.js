@@ -18,3 +18,33 @@ const onlyKeepLastFew = (arr, x) => {
     return newArr;
 }
 console.log(onlyKeepLastFew([1, 2, 3, 4, 5, 6, 7, 8, 9], 4));
+
+//Kenny tries to stay safe, but somehow everyday something
+//happens. If there is a 10% chance of volcano, 15% chance
+//of tsunami, 20% chance of earthquake, 25% chance of
+//blizzard, and 30% chance of meteor strike, In this new
+//function test for each disaster independently, instead of
+//assuming exactly one disaster will happen. In other words,
+//with this new function, all five might occur today
+
+const whatHappensToday = () => {
+    let chance = Math.random();
+    if (chance <= .1) {
+        console.log('volcano');
+    }
+    if (chance <= .15) {
+        console.log('tsunami');
+    }
+    if (chance <= .2) {
+        console.log('earthquake');
+    }
+    if (chance <= .25) {
+        console.log('blizzard');
+    }
+    if (chance <= .3) {
+        console.log('meteor strike');
+    }
+    console.log(chance);
+};
+
+whatHappensToday();
