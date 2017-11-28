@@ -135,3 +135,101 @@ drawCenterChar(55, '@');
 drawLeftChar(10, 'F');
 drawRightChar(70, '$');
 drawCenterChar(25, '^');
+
+//Create ThreesFives(start,end) that adds values from your range
+//If that value is evenly divisible by 3 or 5 but
+//not both. Display the final sum in the console.
+const threesFives = (start, end) => {
+    let sum = 0;
+    let divBy3or5 = [];
+    for (let i = start; i <= end; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            continue;
+        } else if (i % 3 === 0 || i % 5 === 0) {
+            divBy3or5.push(i);
+            sum += i;
+        }
+    }
+    console.log(divBy3or5);
+    return 'Sum: ' + sum;
+}
+console.log(threesFives(10, 100));
+
+//Change is inevitable (especially when you break a twenty!).
+//Make generateCoinChange(cents). Accept a number of American
+//cents, compute and print how to represent that amount with
+//the smallest number of coins possible. Common American
+//coins are penny (1 cent), nickel (5 cents), dime (10 cents)
+//and quarter (25 cents).
+//Second: Can you simplify/shorten your code?
+//Third: Add half-dollar (50 cents) and dollar (100 cents) coins
+//with 40 additional characters or less
+const generateCoinChange = cents => {
+    let silverDollar = 0;
+    let halfDollar = 0;
+    let quarter = 0;
+    let dime = 0;
+    let nickel = 0;
+    let penny = 0;
+    let remainingChange = cents;
+
+    while (remainingChange >= 1.00) {
+        remainingChange -= 1.00;
+        silverDollar++;
+    }
+    while (remainingChange >= .50) {
+        remainingChange -= .50;
+        halfDollar++;
+    }
+    while (remainingChange >= .25) {
+        remainingChange -= .25;
+        quarter++;
+    }
+    while (remainingChange >= .10) {
+        remainingChange -= .10;
+        dime++;
+    }
+    while (remainingChange >= .05) {
+        remainingChange -= .5;
+        nickel++;
+    }
+    while (remainingChange > 0) {
+        remainingChange -= .01;
+        penny++;
+    }
+    console.log(`Silver Dollars: ${silverDollar}, Half Dollars: ${halfDollar}, Quarters: ${quarter}, Dimes: ${dime}, Nickels: ${nickel}, Pennies: ${penny}`)
+};
+generateCoinChange(.94);
+generateCoinChange(1.30);
+generateCoinChange(.23);
+generateCoinChange(4.72);
+generateCoinChange(100.93);
+
+//Create a function messyMath(num) that will return the following
+//sum: add all integers from 0 up to the given num, except for
+//the following special cases of our count value:
+
+//If current count (not num) is evenly divisible by 3, don't add
+//to sum; use continue to skip to the next value of count;
+//Otherwise, if current count is evenly divisible by 7, include it
+//twice in sum instead of once;
+//Regardless of the above, if the current count is exactly 1/3 of
+//num, return -1 immediately.
+//Example: if given num is 4, return 7. If given num is 8, return 34.
+//If given num is 15, return -1.
+const messyMath = (num) => {
+    let sum = 0;
+    for (let i = 0; i <= num; i++) {
+        if (i === num / 3) {
+            return -1;
+        } else if (i % 3 === 0) {
+            continue;
+        } else if (i % 7 === 0) {
+            sum += i * 2;
+        } else {
+            sum += i;
+        }
+    }
+    return `Sum: ${sum}`
+}
+console.log(messyMath(8));
