@@ -2,7 +2,7 @@ const QandA = [
     ['Who is the Pesident?', 'donald trump'],
     ['What year is it?', '2017'],
     ['What is my favorite food?', 'steak'],
-    ['What is my favorite footbal team?', 'dallas cowboys'];
+    ['What is my favorite footbal team?', 'dallas cowboys'],
     ['What is my favorite color?', 'grey']
 ]
 let totalCorrect = 0;
