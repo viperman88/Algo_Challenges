@@ -86,3 +86,52 @@ drawCenterStars(55);
 drawLeftStars(10);
 drawRightStars(70);
 drawCenterStars(25);
+
+//From Star Art, derive the following that will accept
+//and draw the given characters, not just asterisks:
+//drawLeftChars(num, char)
+//drawRightChars(num, char)
+//drawCenterChar(num, char)
+//For all three of these, you can safely assume that 'char'
+//is a string with length 1.
+const drawLeftChar = (num, char) => {
+    let leftChar = '';
+    for (let i = 1; i <= num; i++) {
+        leftChar += char;
+    }
+    console.log(leftChar);
+};
+
+const drawRightChar = (num, char) => {
+    let rightChar = '';
+    for (let i = 1; i <= 75 - num; i++) {
+        rightChar += ' ';
+    }
+    for (let i = 1; i <= num; i++) {
+        rightChar += char;
+    }
+    console.log(rightChar);
+};
+
+const drawCenterChar = (num, char) => {
+    let centerChar = '';
+    for (let i = 1; i <= (75 - num) / 2; i++) {
+        centerChar += ' ';
+    }
+    for (let i = 1; i <= num; i++) {
+        centerChar += char;
+    }
+    for (let i = 1; i <= (75 - num) / 2; i++) {
+        centerChar += ' ';
+    }
+    console.log(centerChar);
+};
+drawLeftChar(30, 'R');
+drawRightChar(40, '*');
+drawCenterChar(40, 'C');
+drawLeftChar(50, '?');
+drawRightChar(65, 'W');
+drawCenterChar(55, '@');
+drawLeftChar(10, 'F');
+drawRightChar(70, '$');
+drawCenterChar(25, '^');
