@@ -164,7 +164,25 @@ console.log(threesFives(10, 100));
 //Second: Can you simplify/shorten your code?
 //Third: Add half-dollar (50 cents) and dollar (100 cents) coins
 //with 40 additional characters or less
+//#1 is the shortened code with 50 & 100 values
+
+// #1
 const generateCoinChange = cents => {
+    let counts = [0, 0, 0, 0, 0, 0, cents];
+    let denominations = [100, 50, 25, 10, 5, 1];
+    for (let i = 0; i < 6; i++) {
+        counts[i] = Math.floor(counts[6] / denominations[i])
+        counts[6] -= counts[i] * denominations[i]
+    }
+    console.log(`Silver Dollar: ${counts[0]}, Half Dollar: ${counts[1]}, Quarters: ${counts[2]}, Dimes: ${counts[3]}, Nickels: ${counts[4]}, Pennies: ${counts[5]}`)
+};
+generateCoinChange(94)
+generateCoinChange(322)
+generateCoinChange(175)
+generateCoinChange(587)
+//
+// #2
+const generateCoinChange = (cents) => {
     let silverDollar = 0;
     let halfDollar = 0;
     let quarter = 0;
@@ -233,3 +251,61 @@ const messyMath = (num) => {
     return `Sum: ${sum}`
 }
 console.log(messyMath(8));
+
+//Write a function that console.logs the number 1,
+//then "chick", then "boom", then "chick", then 2,
+//then "chick", then "boom", then "chick" - continuing
+//the same cycle for each number up to (including) 12.
+const twelveBarBlues = (num) => {
+    for (let i = 1; i <= num; i++) {
+        console.log(`${i}- chick, boom, chick!`);
+    }
+};
+twelveBarBlues(12);
+
+//Create a function to generate Fibonacci numbers. In this
+//famous mathematical sequence, each number is the sum of
+//the previous two, starting with values 0 and 1. Your
+//function should accept one argument, an index into the
+//sequence (where 0 corresponds to the initial value, 4
+//corresponds to the value four later, etc).
+
+const fibonacci = (num) => {
+    let num1 = 0;
+    let num2 = 1;
+    let count = 0;
+    let sum = 0;
+
+    for (let i = 0; i <= num; i++) {
+        console.log(`Fibonacci(${count}) = ${sum}`);
+        sum = num1 + num2;
+        num1 = num2;
+        num2 = sum;
+        count++;
+    }
+};
+fibonacci(13);
+
+//Kaitlin sees beauty in numbers, but also believes that
+//less is more. Implement sumToOne(num) that sums a given
+//integer's digits repeatedly until the sum is only one
+//digit. Return that one-digit result.
+
+const sumToOne = (num) => {
+
+    let sum = 0;
+    let output = []
+    let sNumber = num.toString();
+    do {
+        for (var i = 0, len = sNumber.length; i < len; i += 1) {
+            output.push(+sNumber.charAt(i));
+        }
+        for (var i = 0; i < output.length; sum += output[i++]); {
+            console.log(output);
+            console.log(sum);
+        }
+    }
+    while (sum.length >= 1);
+};
+
+sumToOne(928);
