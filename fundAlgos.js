@@ -180,7 +180,7 @@ generateCoinChange(94)
 generateCoinChange(322)
 generateCoinChange(175)
 generateCoinChange(587)
-//
+
 // #2
 const generateCoinChange = (cents) => {
     let silverDollar = 0;
@@ -290,22 +290,39 @@ fibonacci(13);
 //less is more. Implement sumToOne(num) that sums a given
 //integer's digits repeatedly until the sum is only one
 //digit. Return that one-digit result.
-
 const sumToOne = (num) => {
+    sum = 0;
 
-    let sum = 0;
-    let output = []
-    let sNumber = num.toString();
-    do {
-        for (var i = 0, len = sNumber.length; i < len; i += 1) {
-            output.push(+sNumber.charAt(i));
-        }
-        for (var i = 0; i < output.length; sum += output[i++]); {
-            console.log(output);
-            console.log(sum);
-        }
+    while (num) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
     }
-    while (sum.length >= 1);
+    console.log(sum);
 };
-
 sumToOne(928);
+
+//Create function clockHandAngles(seconds) that, given the number
+//of seconds since 12:00:00, will print the angles (in degrees) of
+//the hour, minute and second hands. As a quick review, there are
+//360 degrees in a full rotation.
+
+//Examples: Given clockHandAngles(3600) (equivalent to 1:00:00),
+//print "Hour Hand: 30 degs. Minute Hand: 0 degs. Second Hand: 0 degs."
+//. For an input parameter seconds of 119730 (equivalent to 9:15:30
+//plus 24 hrs!), you should log "Hour Hand: 277.75 degs. Minute Hand:
+//93 degs. Second Hand: 180 degs.". Note: in the second example, the
+//angle for the minute hand is not simply 90 degrees; it has advanced
+//a bit further, because of the additional 30 seconds in that minute so far.
+const clockHandAngles = seconds => {
+    let counts = [0, 0, 0, seconds];
+    let denominations = [3600, 60, 1];
+    let scaling = [30, 6, 6];
+    for (let i = 0; i < 3; i++) {
+        counts[i] = counts[3] / denominations[i] * scaling[i] % 360;
+        counts[3] -= Math.floor(counts[i] / scaling[i]) * denominations[i];
+    }
+    console.log(`Hour Hand: ${counts[0]} degs, Minute Hand: ${counts[1]} degs, Second Hand: ${counts[2]} degs`);
+};
+clockHandAngles(119730)
+clockHandAngles(3606)
+clockHandAngles(267891)
