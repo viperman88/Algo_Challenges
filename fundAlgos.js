@@ -353,3 +353,16 @@ const slots = (quarters, min, max) => {
     console.log(`You available quarters is ${quarters}. You reached you min/max set playing values.`)
 }
 slots(100, 20, 300);
+
+//Make a function that removes all values that are not numbers.
+//(instead of copying to a new array)
+const numbersOnly = arr => {
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== 'number') {
+            arr.splice(i, 1);
+        }
+    }
+    console.log(arr)
+}
+
+numbersOnly([1, "apple", -3, "orange", 0.5]);
