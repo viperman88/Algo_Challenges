@@ -366,3 +366,25 @@ const numbersOnly = arr => {
 }
 
 numbersOnly([1, "apple", -3, "orange", 0.5]);
+
+//Return whether a given integer is prime. Prime numbers are
+//only evenly divisible by themselves and 1. Many highly optimized
+//solutions exist, however, for now, just create one that is easy
+//to understand and debug.
+const test_prime = num => {
+    if (num === 1) {
+        return 'Not prime number';
+    } else if (num === 2) {
+        return 'Prime Number';
+    } else {
+        for (var x = 2; x < num; x++) {
+            console.log(x);
+            if (num % x === 0) {
+                return 'Not prime number';
+            }
+        }
+        return 'Prime Number';
+    }
+}
+
+console.log(test_prime(23));
