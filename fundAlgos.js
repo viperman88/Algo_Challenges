@@ -319,9 +319,9 @@ const clockHandAngles = seconds => {
     let scaling = [30, 6, 6];
     for (let i = 0; i < 3; i++) {
         counts[i] = counts[3] / denominations[i] * scaling[i] % 360;
-        counts[3] -= Math.floor(counts[i] / scaling[i]) * denominations[i];
+        counts[3] -= Math.round(counts[i] / scaling[i]) * denominations[i];
     }
-    console.log(`Hour Hand: ${counts[0]} degs, Minute Hand: ${counts[1]} degs, Second Hand: ${counts[2]} degs`);
+    console.log(`Hour Hand: ${Math.round(counts[0])} degs, Minute Hand: ${Math.round(counts[1])} degs, Second Hand: ${Math.round(counts[2])} degs`);
 };
 clockHandAngles(119730)
 clockHandAngles(3606)
