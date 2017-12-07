@@ -78,22 +78,21 @@ console.log(countPositives([1, 2, 3, 4, 5]))
 // Create a function that accepts an array. Every time that array has three
 // odd values in a row, print "That’s odd!" Every time the array has three
 // evens in a row, print "Even more so!"
-const oddsAndEvens = (arr) => {
-    for (i = 0; i < arr.length; i++) {
+const evensAndOdds = arr => {
+    for (let i = 0; i < arr.length; i++) {
         if (arr[i] && arr[i + 1] && arr[i + 2]) {
-            if (arr[i] % 2 == 0 && arr[i + 1] % 2 == 0 && arr[i + 2] % 2 == 0) {
+            if (arr[i] % 2 === 0 && arr[i + 1] % 2 === 0 && arr[i + 2] % 2 === 0) {
                 console.log("even");
-            }
-            if (arr[i] % 2 != 0 && arr[i + 1] % 2 != 0 && arr[i + 2] % 2 != 0) {
+            } else if (arr[i] % 2 != 0 && arr[i + 1] % 2 != 0 && arr[i + 2] % 2 != 0) {
                 console.log("odd");
             }
         }
     }
 }
-oddsAndEvens([1, 3]); /* nothing. no 3 defined values in a row */
-oddsAndEvens([1, 3, 7]); /* odd */
-oddsAndEvens([2, 2, 8]); /* even */
-oddsAndEvens([1, 3, 1, 2, 4, 6]); /* odd, even */
+evensAndOdds([1, 3]); /* nothing. no 3 defined values in a row */
+evensAndOdds([1, 3, 7]); /* odd */
+evensAndOdds([2, 2, 8]); /* even */
+evensAndOdds([1, 3, 1, 2, 4, 6]); /* odd, even */
 
 // Given an array of numbers arr, add 1 to every second element,
 //   specifically those whose index is odd (arr[1], [3], [5], etc).
